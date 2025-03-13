@@ -21,8 +21,12 @@ data from stool samples of individuals with Parkinson's disease.
 This repository contains:
 - `data` the original data
 - `src` the analysis code
-- `models` the models as `Rdata` files
+- `models` a place for the models as `Rdata` files
 - `figures` the raw figures for the publication
+
+Please note that the model files are too large to be hosted on
+Github, so you will have to download them from 
+[this Zenodo repository](https://doi.org/10.5281/zenodo.14026970)
 
 ## Applying the model to your own data
 
