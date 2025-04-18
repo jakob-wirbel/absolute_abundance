@@ -5,7 +5,7 @@ Data and code to predict absolute abundance for metagenomic samples
 ## Description
 
 This project contains the analyses and results for the publication:
-> [Accurate prediction of absolute prokaryotic abundance from DNA concentration](https://www.cell.com/cell-reports-methods/current)
+> [Accurate prediction of absolute prokaryotic abundance from DNA concentration](https://doi.org/10.1016/j.crmeth.2025.101030)
 
 Please refer to the publication for more detail.
 
