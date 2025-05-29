@@ -52,6 +52,8 @@ should be in a data.frame `df`):
 
 ```{r}
 
+library("mlr3")
+
 # load the model
 load('./models/full_model.RData`)
 
