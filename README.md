@@ -65,6 +65,39 @@ df.predicted <- .f_apply_model(df, rr_full)
 
 ```
 
+## Version problems
+
+Unfortunately, some users have reported that they could not load the model
+properly. The underlying problem seems to be that there was a version mismatch
+between the version of `mlr3`, `paradox`, and `mlr3tuning` of my computer (where
+the model was trained) and the computer where it was loaded, preventing the
+proper application of the model.  
+To fix this issue, the model was retrained with these package versions (not
+quite sure which package is actually the culprit; these are my best guesses):
+
+| Model version | Zenodo link | R package versions |
+| ------------- | ----------- | ------------------ |
+| Version 1.0   | https://zenodo.org/records/14026970 | mlr3_0.16.0, mlr3tuning_0.18.0, paradox_0.11.1, Rcpp_1.0.10 |
+| Version 2.0   | https://zenodo.org/records/16969374 | mlr3_1.1.0, mlr3tuning_1.4.0, paradox_1.0.1, Rcpp_1.1.0 |
+
+Going forward, if you run into any of these errors:
+```{R}
+df.predicted <- .f_apply_model(df, rr_full)
+Error in private$.store_values(xs) : attempt to apply non-function
+```
+or 
+```{R}
+df.predicted <- .f_apply_model(df, rr_full)
+Error in .__ResampleResult__learners(self = self, private = private, super = super,  : 
+  could not find function ".__ResampleResult__learners"
+```
+you might want to re-train the model on your own computer, by executing the 
+first 130-odd lines of the script 
+[`train_models.R`](https://github.com/jakob-wirbel/absolute_abundance/blob/main/src/train_models.R) script.
+On my computer, it took about 12 minutes to train the full model (see this 
+[issue](https://github.com/jakob-wirbel/absolute_abundance/issues/1#issuecomment-3229301728)).
+
+
 ## Contact
 
 If you have questions about the code or the analyses presented in this 
